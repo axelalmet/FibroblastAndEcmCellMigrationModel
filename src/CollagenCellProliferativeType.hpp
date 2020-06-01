@@ -1,6 +1,6 @@
 /*
 
-Copyright (c) 2005-2017, University of Oxford.
+Copyright (c) 2005-2020, University of Oxford.
 All rights reserved.
 
 University of Oxford means the Chancellor, Masters and Scholars of the
@@ -33,47 +33,42 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
-#ifndef TESTHELLO_HPP_
-#define TESTHELLO_HPP_
+#ifndef COLLAGENCELLPROLIFERATIVETYPE_HPP_
+#define COLLAGENCELLPROLIFERATIVETYPE_HPP_
 
-#include <cxxtest/TestSuite.h>
-/* Most Chaste code uses PETSc to solve linear algebra problems.  This involves starting PETSc at the beginning of a test-suite
- * and closing it at the end.  (If you never run code in parallel then it is safe to replace PetscSetupAndFinalize.hpp with FakePetscSetup.hpp)
- */
-#include "PetscSetupAndFinalize.hpp"
-#include "Hello.hpp"
+#include "AbstractCellProliferativeType.hpp"
+#include "ChasteSerialization.hpp"
+#include <boost/serialization/base_object.hpp>
 
 /**
- * @file
- *
- * This is an example of a CxxTest test suite, used to test the source
- * code, and also used to run simulations (as it provides a handy
- * shortcut to compile and link against the correct libraries using scons).
- *
- * You can #include any of the files in the project 'src' folder.
- * For example here we #include "Hello.hpp"
- *
- * You can utilise any of the code in the main the Chaste trunk
- * in exactly the same way.
- * NOTE: you will have to alter the project SConscript file lines 41-44
- * to enable #including of code from the 'heart', 'cell_based' or 'crypt'
- * components of Chaste.
+ * Subclass of AbstractCellProliferativeType defining a Collagen cell.
  */
-
-class TestHello : public CxxTest::TestSuite
+class CollagenCellProliferativeType : public AbstractCellProliferativeType
 {
-public:
-    void TestHelloClass()
+private:
+    /** Needed for serialization. */
+    friend class boost::serialization::access;
+    /**
+     * Archive the cell proliferative type.
+     *
+     * @param archive the archive
+     * @param version the current version of this class
+     */
+    template<class Archive>
+    void serialize(Archive & archive, const unsigned int version)
     {
-        // Create an object called 'world' of class 'Hello',
-        // (Hello.hpp is #included from the 'src' folder.)
-        Hello world("Hello world!");
-
-        // The TS_ASSERT macros are used to test that the object performs as expected
-        TS_ASSERT_EQUALS(world.GetMessage(), "Hello world!");
-        TS_ASSERT_THROWS_THIS(world.Complain("I don't like you"),
-                              "I don't like you");
+        archive & boost::serialization::base_object<AbstractCellProliferativeType>(*this);
     }
+
+public:
+    /**
+     * Constructor.
+     */
+    CollagenCellProliferativeType();
 };
 
-#endif /*TESTHELLO_HPP_*/
+#include "SerializationExportWrapper.hpp"
+// Declare identifier for the serializer
+CHASTE_CLASS_EXPORT(CollagenCellProliferativeType)
+
+#endif /* CollagenCELLPROLIFERATIVETYPE_HPP_*/

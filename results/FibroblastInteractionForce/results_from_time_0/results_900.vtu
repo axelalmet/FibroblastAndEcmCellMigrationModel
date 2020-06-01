@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<VTKFile type="UnstructuredGrid" version="0.1" byte_order="LittleEndian" header_type="UInt32" compressor="vtkZLibDataCompressor">
+  <UnstructuredGrid>
+    <Piece NumberOfPoints="2"                    NumberOfCells="0"                   >
+      <PointData>
+        <DataArray type="Float64" Name="Cell migration direction" NumberOfComponents="3" format="appended" RangeMin="1"                    RangeMax="1"                    offset="0"                   />
+        <DataArray type="Float64" Name="Cell types" format="appended" RangeMin="3"                    RangeMax="3"                    offset="76"                  />
+        <DataArray type="Float64" Name="Process rank" format="appended" RangeMin="0"                    RangeMax="0"                    offset="124"                 />
+        <DataArray type="Float64" Name="direction" format="appended" RangeMin="0.89665618965"        RangeMax="4.0382488432"         offset="164"                 />
+        <DataArray type="Float64" Name="scale" format="appended" RangeMin="0.5"                  RangeMax="0.5"                  offset="220"                 />
+      </PointData>
+      <CellData>
+      </CellData>
+      <Points>
+        <DataArray type="Float64" Name="Vertex positions" NumberOfComponents="3" format="appended" RangeMin="0.17216525956"        RangeMax="0.42216525956"        offset="268"                 />
+      </Points>
+      <Cells>
+        <DataArray type="Int64" Name="connectivity" format="appended" RangeMin=""                     RangeMax=""                     offset="332"                 />
+        <DataArray type="Int64" Name="offsets" format="appended" RangeMin=""                     RangeMax=""                     offset="348"                 />
+        <DataArray type="UInt8" Name="types" format="appended" RangeMin=""                     RangeMax=""                     offset="364"                 />
+      </Cells>
+    </Piece>
+  </UnstructuredGrid>
+  <AppendedData encoding="base64">
+   _AQAAAACAAAAwAAAAJQAAAA==eJybUJYbteLnY3u3LxNTPv9/Yc8ABbIQ8f2LIOL7YeIAMFYUmg==AQAAAACAAAAQAAAAEAAAAA==eJxjYAABDgcGKA0AAvAAkQ==AQAAAACAAAAQAAAACwAAAA==eJxjYEAFAAAQAAE=AQAAAACAAAAQAAAAGAAAAA==eJyTmeUZlLHxjf0jz+wtWuoCDgA7egaBAQAAAACAAAAQAAAAEAAAAA==eJxjYACBB/YMUBoADQYCPw==AQAAAACAAAAwAAAAHgAAAA==eJy74bj6fhPnsf0MaGDmwqv5B1lu26OLAwAstgkRAAAAAACAAAAAAAAAAAAAAACAAAAAAAAAAAAAAACAAAAAAAAA
+  </AppendedData>
+</VTKFile>
+
+<!-- Created by Chaste version 2019.1.c4f5695 (with uncommitted modifications) on Thu, 28 May 2020 00:53:51 +0000.  Chaste was built on Mon, 02 Mar 2020 07:58:05 +0000 by machine (uname) 'Linux' using settings: Debug.  Checked-out project versions: AxelA=58358c550748fedf6088863782fdd77870262cc6; FibroblastAndEcmCellMigrationModel=eb925e5271e612a5e27ccb46f6f7ce7d3a599de4; HairFollicleModelling=eaec054d1a7a4ed4dd861341385f9b286cf1524f; MorphoCellBasedComparison=16de33a9744c65327e83bc3f0c912a1b99f2ee7d; WoundHealingModelling=7190351a94990b69b4806d2dfef8e8f82fe6ec30.
+-->

@@ -1,0 +1,29 @@
+Start testing: May 30 15:35 PDT
+----------------------------------------------------------
+499/500 Testing: TestMigrationOverExtracellularMatrix
+499/500 Test: TestMigrationOverExtracellularMatrix
+Command: "/home/axel/BuildChaste/projects/FibroblastAndEcmCellMigrationModel/test/TestMigrationOverExtracellularMatrix"
+Directory: /media/sf_SimulationPackages/Chaste/
+"TestMigrationOverExtracellularMatrix" start time: May 30 15:35 PDT
+Output:
+----------------------------------------------------------
+Running 1 test
+
+ ***** TestMigrationOverExtracellularMatrix.hpp *****
+
+
+Entering TestMigration
+Passed
+OK!
+<end of output>
+Test time = 119.64 sec
+----------------------------------------------------------
+Test Passed.
+"TestMigrationOverExtracellularMatrix" end time: May 30 15:37 PDT
+"TestMigrationOverExtracellularMatrix" time elapsed: 00:01:59
+----------------------------------------------------------
+
+End testing: May 30 15:37 PDT
+
+Continuous_project_FibroblastAndEcmCellMigrationModel = 119.64 sec*proc
+
