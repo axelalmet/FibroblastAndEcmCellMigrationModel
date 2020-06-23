@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<VTKFile type="UnstructuredGrid" version="0.1" byte_order="LittleEndian" header_type="UInt32" compressor="vtkZLibDataCompressor">
+  <UnstructuredGrid>
+    <Piece NumberOfPoints="349"                  NumberOfCells="0"                   >
+      <PointData>
+        <DataArray type="Float64" Name="Cell migration direction" NumberOfComponents="3" format="appended" RangeMin="1"                    RangeMax="1"                    offset="0"                   />
+        <DataArray type="Float64" Name="Cell types" format="appended" RangeMin="5"                    RangeMax="5"                    offset="476"                 />
+        <DataArray type="Float64" Name="Process rank" format="appended" RangeMin="0"                    RangeMax="0"                    offset="548"                 />
+        <DataArray type="Float64" Name="direction" format="appended" RangeMin="0.7853981634"         RangeMax="5.390631313"          offset="608"                 />
+        <DataArray type="Float64" Name="scale" format="appended" RangeMin="1"                    RangeMax="1"                    offset="848"                 />
+      </PointData>
+      <CellData>
+      </CellData>
+      <Points>
+        <DataArray type="Float64" Name="Vertex positions" NumberOfComponents="3" format="appended" RangeMin="0"                    RangeMax="13.892443989"         offset="920"                 />
+      </Points>
+      <Cells>
+        <DataArray type="Int64" Name="connectivity" format="appended" RangeMin=""                     RangeMax=""                     offset="1928"                />
+        <DataArray type="Int64" Name="offsets" format="appended" RangeMin=""                     RangeMax=""                     offset="1944"                />
+        <DataArray type="UInt8" Name="types" format="appended" RangeMin=""                     RangeMax=""                     offset="1960"                />
+      </Cells>
+    </Piece>
+  </UnstructuredGrid>
+  <AppendedData encoding="base64">
+   _AQAAAACAAAC4IAAAUgEAAA==eJw7a12fNm/BM/szUJoBCs7iEIfy958lUhyXOaPmj5o/av6o+aPmj5o/av6o+aPmj5o/av6o+aPmj5o/av6o+aPmj5o/av6o+aPmj5o/av6o+aPmj5o/av6o+aPmj5o/nMzn+vL25tbGd/uT565PXhh0eT9M/PzcRU90t77av+Mcy+eMBQ/h4seOZgQLHDu9/7AKz4orNu/h4j/OP1rifvehPaP8//y5Pa/g4oc2sfne63u5/5JXxtdKx8dw8UYmEb97wk/sN84UKnn96gVcfIn9iX1pe97t/5ZzZV/B+YtwcaXf9e2/ox/Zt9/UtZ9vijB/Ttxe17zkN/uFwjRO+XTehfur3JyneMWVZ/vtfpZOkc55Blcv/TP7QG3F4/3/q23/8Ka+hIuX3XzmffH18/23Th518HF8CjeHU8XJXXnS2/0hLqf4p5fegIsDAAVGHg4=AQAAAACAAADoCgAAIgAAAA==eJxjYAABEQeGUXqUHqVH6VF6lB6lR+lRepQeRjQAavFyhQ==AQAAAACAAADoCgAAGQAAAA==eJztwQENAAAAwqD3T20PBxQAAPwZCugAAQ==AQAAAACAAADoCgAAoAAAAA==eJyT0HUJ+a340l4CSl9SNK6vucnkAKMlRuVH5UflR+VH5UflR+VH5UflR+WpKO9W+XWzzDRuh9O7537YfIbXYVZV9Jvmn4IONWq5XX/NRR2MFpp5hvnwOShVrFjOOEHUQfZUf15nMreDr/eCI8beog4V3joCk71ZHSxmaG38F87vwNPTcHi1tYDDixPyW02DmB08Lhsb3/7H6gAA7XVXPA==AQAAAACAAADoCgAAIgAAAA==eJxjYACBD/YMo/QoPUqP0qP0KD1Kj9Kj9Cg9jGgAikKdIw==AQAAAACAAAC4IAAA4AIAAA==eJyVmUtKJFEUBV+Jgxo4EBEREfGvixDqLtkluQSHDgXL+5I87wbnZQ666NPhJSYZTVe3Vj+7v1+/D231mY/+nn7O8gF/HjX+fajvE7+H+7mPPvV94s/hfu6jT32f+Eu4n/voU98n/hru5z761PeJv4X7uY8+9X3i7+F+7qNPfZ/4R7if++hT3yf+Ge7nPvrU94l/hfu5jz71feLf4X7uow+8v03vCBc157pi+ZBP2bFjk3zvRtT7rA/xvRtR77M+xPduRL3P+hDfuxH1PutDfO9G1PusD/G9G1Hvsz7EPwKf+6wP8b0bUe+zPsT3bkS9z/oQ3zsT9T7r05++r/ujf/9jB9pGPmqeOkA+rhvKUwfIx3VDeeoA+bhuKE8dIB/XDeWpA+TjuqE8dYB8XDeUpw6Qj+uG8rnP+hCf77vy1AHycd1QnjpAPsRnZ5SnLpFPPsu+7o/++wA70DbyUfPUAfJx3VCeOkA+rhvKUwfIx3VDeeoA+bhuKE8dIB/XDeWpA+TjuqE8dYB8XDeUz33Wh/h835WnDpCP64by1AHyIT47ozx1iXzyWfZ1f/T7A+xA28hHzVMHyMd1Q3nqAPm4bihPHSAf1w3lqQPk47qhPHWAfFw3lKcOkI/rhvLUAfJx3VA+91kf4vN9V546QD6uG8pTB8iH+OyM8tQl8sln2df90e8XsQNtIx81Tx0gH9cN5akD5OO6oTx1gHxcN5SnDpCP64by1AHycd1QnjpAPq4bylMHyMd1Q/ncZ32Iz/ddeeoA+bhuKE8dIB/iszPKU5fIJ59lX/dH//8BO9A28lHz1AHycd1QnjpAPq4bylMHyMd1Q3nqAPm4bihPHSAf1w3lqQPk47qhPHWAfFw3lM991of4fN+Vpw6Qj+uG8tQB8iE+O6M8dWn0OXbm6/+9/pLvq38Ou3I/jZNyP4v6zgXsV3Fa7jfA38H+APsT7C+wv8W+3D8/jp/L9/m/aWsmbA==AAAAAACAAAAAAAAAAAAAAACAAAAAAAAAAAAAAACAAAAAAAAA
+  </AppendedData>
+</VTKFile>
+
+<!-- Created by Chaste version 2019.1.c4f5695 (with uncommitted modifications) on Sun, 21 Jun 2020 04:44:59 +0000.  Chaste was built on Mon, 02 Mar 2020 07:58:05 +0000 by machine (uname) 'Linux' using settings: Debug.  Checked-out project versions: AxelA=58358c550748fedf6088863782fdd77870262cc6; FibroblastAndEcmCellMigrationModel=0643ea9745a9ed253264f428ee7e3482c828ae08; HairFollicleModelling=df2e70910d635b61a954d5b922e1ec8f2b4f0193; MorphoCellBasedComparison=23b735d947861d59cb87258b8e8c8309e51be0be; WoundHealingModelling=ff4b4ac012a2fff79ca531544491b8453306bd70.
+-->

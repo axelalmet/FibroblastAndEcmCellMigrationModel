@@ -18,6 +18,7 @@
 #include "FibroblastCellProliferativeType.hpp" // Dermal cell type
 #include "WildTypeCellMutationState.hpp" // Epidermal mutation state
 #include "CellMigrationDirectionWriter.hpp" // Cell writer for migration direction
+#include "PolarityTrackingModifier.hpp" // Modifier to update cell polarities
 #include "FakePetscSetup.hpp" //Forbids tests running in parallel
 #include "PetscSetupAndFinalize.hpp"
 
@@ -25,8 +26,8 @@
 
 static const std::string M_OUTPUT_DIRECTORY = "FibroblastInteractionForce";
 static const double M_DT = 0.005;
-static const double M_END_TIME = 2.0;
-static const double M_SAMPLING_TIMESTEP = 0.1*M_END_TIME/M_DT;
+static const double M_END_TIME = 5.0;
+static const double M_SAMPLING_TIMESTEP = 0.1/M_DT;
 
 /*
 * A bunch of tests to make sure that the GeneralisedLinearSpringForceWithVariableInteractionDistance
@@ -41,7 +42,7 @@ public:
         // Set some parameters
         double interaction_radius = 1.5; // Cut-off distance
         double spring_stiffness = 50.0; // Spring stiffness
-        double fibroblast_alignment_strength = 2.5*M_DT; // Remodelling rate of fibroblasts to each other.
+        double fibroblast_alignment_strength = 5.0; // Remodelling rate of fibroblasts to each other.
         double minor_axis_scale = 0.5; // Scale for minor axis of fibroblast (for now they'll be two circles)
 
         // Create two nodes
@@ -73,7 +74,7 @@ public:
             p_cell->SetCellProliferativeType(p_fibroblast_type); //Make cell differentiated
 
             // Random initiate a fibroblast direction
-            double fibroblast_direction = 1.25*i*M_PI + 0.5 * M_PI * RandomNumberGenerator::Instance()->ranf();
+            double fibroblast_direction = 0.5*i*M_PI + 0.5 * M_PI * RandomNumberGenerator::Instance()->ranf();
 
             // Initialise fibroblast direction and shape scale
             p_cell->GetCellData()->SetItem("direction", fibroblast_direction);
@@ -103,21 +104,12 @@ public:
         p_spring_force->SetCutOffLength(interaction_radius);
         simulator.AddForce(p_spring_force);
 
-        // Let's calculate the predicted rest length
-        c_vector<double, 2> initial_unit_difference;
-        initial_unit_difference[0] = 1.0;
-        initial_unit_difference[1] = 0.0;
-
-        // double predicted_rest_length = p_spring_force->CalculateRestLength(0, 1, initial_unit_difference, cell_population);
+        // Add simulation modifier to update cell polarities
+        MAKE_PTR(PolarityTrackingModifier<2>, p_polarity_tracking_modifier);
+        p_polarity_tracking_modifier->SetReorientationStrength(fibroblast_alignment_strength);
+        simulator.AddSimulationModifier(p_polarity_tracking_modifier);
 
         simulator.Solve();
-
-        // Get the distance between the two cells now
-        // c_vector<double, 2> node_location_A = simulator.rGetCellPopulation().GetNode(0)->rGetLocation();
-        // c_vector<double, 2> node_location_B = simulator.rGetCellPopulation().GetNode(1)->rGetLocation();
-
-        // Test that the cells relaxed to the predicted rest length.
-        // TS_ASSERT_DELTA(predicted_rest_length, norm_2(node_location_A - node_location_B), 1e-6);
     }
 };
 

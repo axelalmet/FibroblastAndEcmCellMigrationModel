@@ -2,8 +2,8 @@
 
 	<OffLatticeSimulation-2-2>
 		<Dt>0.005</Dt>
-		<EndTime>5</EndTime>
-		<SamplingTimestepMultiple>20</SamplingTimestepMultiple>
+		<EndTime>10</EndTime>
+		<SamplingTimestepMultiple>100</SamplingTimestepMultiple>
 		<OutputDivisionLocations>0</OutputDivisionLocations>
 		<OutputCellVelocities>0</OutputCellVelocities>
 	</OffLatticeSimulation-2-2>
@@ -35,21 +35,23 @@
 	</CellKillers>
 
 	<SimulationModifiers>
-		<CollagenAlignmentTrackingModifier-2>
-		</CollagenAlignmentTrackingModifier-2>
+		<CollagenFibreTrackingModifier-2>
+		</CollagenFibreTrackingModifier-2>
+		<PolarityTrackingModifier-2>
+		</PolarityTrackingModifier-2>
 	</SimulationModifiers>
 
 	<Forces>
 		<GeneralisedLinearSpringForceWithVariableInteractionDistance-2-2>
-			<MeinekeSpringStiffness>30</MeinekeSpringStiffness>
+			<CellCellSpringStiffness>15</CellCellSpringStiffness>
+			<CellEcmStiffnessMultiplicationFactor>0.1</CellEcmStiffnessMultiplicationFactor>
 			<MeinekeDivisionRestingSpringLength>0.5</MeinekeDivisionRestingSpringLength>
 			<MeinekeSpringGrowthDuration>1</MeinekeSpringGrowthDuration>
 			<UseCutOffLength>1</UseCutOffLength>
 			<CutOffLength>1.5</CutOffLength>
 		</GeneralisedLinearSpringForceWithVariableInteractionDistance-2-2>
 		<FibreAlignmentBasedMigrationForce-2>
-			<ReorientationStrength>0.0125</ReorientationStrength> 
-			<MigrationForceStrength>0.05</MigrationForceStrength> 
+			<MigrationForceStrength>1</MigrationForceStrength> 
 		</FibreAlignmentBasedMigrationForce-2>
 	</Forces>
 

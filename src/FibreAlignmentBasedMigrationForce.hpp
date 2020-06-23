@@ -51,10 +51,6 @@ friend class TestForces;
 
 private:
 
-    /*
-     * Migration fibre reorientation strength
-     */
-    double mReorientationStrength;
 
     /*
      * Migration force strength
@@ -73,7 +69,6 @@ private:
     void serialize(Archive & archive, const unsigned int version)
     {
         archive & boost::serialization::base_object<AbstractForce<DIM> >(*this);
-        archive & mReorientationStrength;
         archive & mMigrationForceStrength;
     }
 
@@ -90,20 +85,6 @@ public:
     ~FibreAlignmentBasedMigrationForce();
 
     /*
-     * Get fibre reorientation strength
-     * 
-     * @return mReorientationStrength
-     */
-    double GetReorientationStrength();
-
-    /*
-     * Set the fibre reorientation strength
-     * 
-     * @param ReorientationStrength
-     */
-    void SetReorientationStrength(double reorientationStrength);
-
-    /*
      * Get migration force strength
      * 
      * @return mMigrationForceStrength
@@ -116,15 +97,6 @@ public:
      * @param migrationForceStrength
      */
     void SetMigrationForceStrength(double migrationForceStrength);
-
-    /*
-     * Determine whether fibre intersects with with fibroblast
-     * 
-     * @param rCellPopulation
-     * @param fibroblastIndex fibroblast index
-     * @param fibreIndex index for spanning collagen fibre
-     */
-    bool DoesCollagenFibreIntersectWithFibroblast(AbstractCellPopulation<DIM>& rCellPopulation, unsigned fibroblastIndex, unsigned fibreIndex);
 
     /**
      * Overridden AddForceContribution() method.

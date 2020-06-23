@@ -1,0 +1,64 @@
+<Chaste>
+
+	<OffLatticeSimulation-2-2>
+		<Dt>0.005</Dt>
+		<EndTime>10</EndTime>
+		<SamplingTimestepMultiple>2000</SamplingTimestepMultiple>
+		<OutputDivisionLocations>0</OutputDivisionLocations>
+		<OutputCellVelocities>0</OutputCellVelocities>
+	</OffLatticeSimulation-2-2>
+
+	<NodeBasedCellPopulation-2>
+		<MechanicsCutOffLength>2</MechanicsCutOffLength>
+		<UseVariableRadii>0</UseVariableRadii>
+		<MeinekeDivisionSeparation>0.3</MeinekeDivisionSeparation>
+		<CentreBasedDivisionRule>
+			<RandomDirectionCentreBasedDivisionRule-2-2>
+			</RandomDirectionCentreBasedDivisionRule-2-2>
+		</CentreBasedDivisionRule>
+		<DampingConstantNormal>1</DampingConstantNormal>
+		<DampingConstantMutant>1</DampingConstantMutant>
+		<OutputResultsForChasteVisualizer>1</OutputResultsForChasteVisualizer>
+	</NodeBasedCellPopulation-2>
+
+	<CellCycleModels>
+		<NoCellCycleModel>
+		</NoCellCycleModel>
+	</CellCycleModels>
+
+	<SrnModels>
+		<NullSrnModel>
+		</NullSrnModel>
+	</SrnModels>
+
+	<CellKillers>
+	</CellKillers>
+
+	<SimulationModifiers>
+		<CollagenFibreTrackingModifier-2>
+		</CollagenFibreTrackingModifier-2>
+	</SimulationModifiers>
+
+	<Forces>
+		<GeneralisedLinearSpringForceWithVariableInteractionDistance-2-2>
+			<CellCellSpringStiffness>1</CellCellSpringStiffness>
+			<CellEcmStiffnessMultiplicationFactor>1</CellEcmStiffnessMultiplicationFactor>
+			<MeinekeDivisionRestingSpringLength>0.5</MeinekeDivisionRestingSpringLength>
+			<MeinekeSpringGrowthDuration>1</MeinekeSpringGrowthDuration>
+			<UseCutOffLength>1</UseCutOffLength>
+			<CutOffLength>1.5</CutOffLength>
+		</GeneralisedLinearSpringForceWithVariableInteractionDistance-2-2>
+	</Forces>
+
+	<CellPopulationBoundaryConditions>
+	</CellPopulationBoundaryConditions>
+
+	<NumericalMethod>
+		<ForwardEulerNumericalMethod-2-2>
+			<UseAdaptiveTimestep>0</UseAdaptiveTimestep> 
+			<UseUpdateNodeLocation>0</UseUpdateNodeLocation> 
+			<GhostNodeForcesEnabled>0</GhostNodeForcesEnabled> 
+		</ForwardEulerNumericalMethod-2-2>
+	</NumericalMethod>
+
+</Chaste>

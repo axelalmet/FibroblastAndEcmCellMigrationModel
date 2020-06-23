@@ -73,6 +73,7 @@ void CellCollagenFibreOrientationWriter<ELEMENT_DIM, SPACE_DIM>::VisitCell(CellP
     unsigned location_index = pCellPopulation->GetLocationIndexUsingCell(pCell);
     unsigned cell_id = pCell->GetCellId();
     c_vector<double, SPACE_DIM> cell_location = pCellPopulation->GetLocationOfCellCentre(pCell);
+    double orientation = pCell->GetCellData()->GetItem("orientation");
     c_vector<double, SPACE_DIM> collagen_fibre_orientation = GetVectorCellDataForVtkOutput(pCell, pCellPopulation);
 
     *this->mpOutStream << location_index << " " << cell_id << " ";
@@ -80,6 +81,7 @@ void CellCollagenFibreOrientationWriter<ELEMENT_DIM, SPACE_DIM>::VisitCell(CellP
     {
         *this->mpOutStream << cell_location[i] << " ";
     }
+    *this->mpOutStream << orientation << " ";
     for (unsigned i=0; i<SPACE_DIM; i++)
     {
         *this->mpOutStream << collagen_fibre_orientation[i] << " ";

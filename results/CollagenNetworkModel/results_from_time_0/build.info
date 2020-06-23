@@ -1,0 +1,57 @@
+<ChasteBuildInfo>
+	<ProvenanceInfo>
+		<VersionString>2019.1.c4f5695</VersionString> <!-- build specific -->
+		<IsWorkingCopyModified>1</IsWorkingCopyModified>
+		<BuildInformation>Debug</BuildInformation>
+		<BuildTime>Mon, 02 Mar 2020 07:58:05 +0000</BuildTime>
+		<CurrentTime>Sat, 20 Jun 2020 03:06:36 +0000</CurrentTime>
+		<BuilderUnameInfo>Linux</BuilderUnameInfo>
+		<Projects>
+			<Project>
+				<Name>AxelA</Name>
+				<Version>58358c550748fedf6088863782fdd77870262cc6</Version>
+				<Modified>True</Modified>
+			</Project>
+			<Project>
+				<Name>FibroblastAndEcmCellMigrationModel</Name>
+				<Version>0643ea9745a9ed253264f428ee7e3482c828ae08</Version>
+				<Modified>True</Modified>
+			</Project>
+			<Project>
+				<Name>HairFollicleModelling</Name>
+				<Version>df2e70910d635b61a954d5b922e1ec8f2b4f0193</Version>
+				<Modified>True</Modified>
+			</Project>
+			<Project>
+				<Name>MorphoCellBasedComparison</Name>
+				<Version>23b735d947861d59cb87258b8e8c8309e51be0be</Version>
+				<Modified>True</Modified>
+			</Project>
+			<Project>
+				<Name>WoundHealingModelling</Name>
+				<Version>ff4b4ac012a2fff79ca531544491b8453306bd70</Version>
+				<Modified>True</Modified>
+			</Project>
+		</Projects>
+	</ProvenanceInfo>
+	<Compiler>
+		<NameAndVersion>/usr/bin/c++, version 7.4.0</NameAndVersion>
+		<Flags>-std=c++14 -Wall -Werror -Wnon-virtual-dtor -Woverloaded-virtual -Wextra -Wno-unused-parameter -Wvla -Wimplicit-fallthrough=2 -pthread -g</Flags>
+	</Compiler>
+	<Libraries>
+		<CompiledIn>
+			<PETSc>3.7.7</PETSc>
+			<Boost>1.65.1</Boost>
+			<HDF5>1.10.0</HDF5>
+			<Parmetis>4.0.3</Parmetis>
+		</CompiledIn>
+		<Binaries>
+			<XSD>4.0.0</XSD>
+		</Binaries>
+		<Optional>
+			<SUNDIALS>"2.7.0"</SUNDIALS><!-- includes Cvode of a different version number -->
+			<VTK>7.1</VTK>
+			<Xerces>3.2.0</Xerces>
+		</Optional>
+	</Libraries>
+</ChasteBuildInfo>

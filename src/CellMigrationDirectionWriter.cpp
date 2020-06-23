@@ -71,6 +71,7 @@ void CellMigrationDirectionWriter<ELEMENT_DIM, SPACE_DIM>::VisitCell(CellPtr pCe
     unsigned location_index = pCellPopulation->GetLocationIndexUsingCell(pCell);
     unsigned cell_id = pCell->GetCellId();
     c_vector<double, SPACE_DIM> cell_location = pCellPopulation->GetLocationOfCellCentre(pCell);
+    double direction = pCell->GetCellData()->GetItem("direction");
     c_vector<double, SPACE_DIM> migration_direction = GetVectorCellDataForVtkOutput(pCell, pCellPopulation);
 
     *this->mpOutStream << location_index << " " << cell_id << " ";
@@ -78,6 +79,8 @@ void CellMigrationDirectionWriter<ELEMENT_DIM, SPACE_DIM>::VisitCell(CellPtr pCe
     {
         *this->mpOutStream << cell_location[i] << " ";
     }
+    *this->mpOutStream << direction << " ";
+    
     for (unsigned i=0; i<SPACE_DIM; i++)
     {
         *this->mpOutStream << migration_direction[i] << " ";

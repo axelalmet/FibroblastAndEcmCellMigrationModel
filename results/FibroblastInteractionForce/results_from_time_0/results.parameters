@@ -2,8 +2,8 @@
 
 	<OffLatticeSimulation-2-2>
 		<Dt>0.005</Dt>
-		<EndTime>2</EndTime>
-		<SamplingTimestepMultiple>40</SamplingTimestepMultiple>
+		<EndTime>5</EndTime>
+		<SamplingTimestepMultiple>20</SamplingTimestepMultiple>
 		<OutputDivisionLocations>0</OutputDivisionLocations>
 		<OutputCellVelocities>0</OutputCellVelocities>
 	</OffLatticeSimulation-2-2>
@@ -35,6 +35,8 @@
 	</CellKillers>
 
 	<SimulationModifiers>
+		<PolarityTrackingModifier-2>
+		</PolarityTrackingModifier-2>
 	</SimulationModifiers>
 
 	<Forces>

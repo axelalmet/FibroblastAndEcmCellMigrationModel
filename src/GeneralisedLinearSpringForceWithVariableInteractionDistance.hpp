@@ -69,10 +69,10 @@ private:
     void serialize(Archive & archive, const unsigned int version)
     {
         archive & boost::serialization::base_object<AbstractTwoBodyInteractionForce<ELEMENT_DIM, SPACE_DIM> >(*this);
-        archive & mMeinekeSpringStiffness;
+        archive & mCellCellSpringStiffness;
         archive & mMeinekeDivisionRestingSpringLength;
         archive & mMeinekeSpringGrowthDuration;
-        archive & mFibroblastAlignmentStrength;
+        archive & mCellEcmStiffnessMultiplicationFactor;
     }
 
 protected:
@@ -84,7 +84,7 @@ protected:
      * their off-lattice model of the intestinal crypt
      * (doi:10.1046/j.0960-7722.2001.00216.x).
      */
-    double mMeinekeSpringStiffness;
+    double mCellCellSpringStiffness;
 
     /**
      * Initial resting spring length after cell division.
@@ -103,12 +103,11 @@ protected:
      */
     double mMeinekeSpringGrowthDuration;
 
-
-    /*
-     * The parameter that controls how quickly fibroblasts
-     * align with each other.
+    /* 
+     * Parameter that scales the collagen spring stiffness 
+     * as a proxy for buckling.
      */
-    double mFibroblastAlignmentStrength;
+    double mCellEcmStiffnessMultiplicationFactor;
 
 public:
 
@@ -173,48 +172,32 @@ public:
                             c_vector<double, SPACE_DIM> unitDifference,
                             AbstractCellPopulation<ELEMENT_DIM,SPACE_DIM>& rCellPopulation);
 
-    /* For two fibroblasts that have a negative overlap, as determined by
-     * CalculateRestLength, we update their alignments, phi.
-     *
-     * @param pFibroblastA the CellPtr for fibroblast A (so we can access cell data)
-     * @param pFibroblastB the CellPtr for fibroblast B (so we can access cell data)
-     * 
-     */
-    void UpdateFibroblastAlignment(CellPtr pFibroblastCellA, CellPtr pFibroblastCellB);
-
-    /*
-     * @return mFibroblastAlignmentStrength
-     */
-    double GetFibroblastAlignmentStrength();
-
     /**
      * @return mMeinekeDivisionRestingSpringLength
      */
     double GetMeinekeDivisionRestingSpringLength();
 
     /**
-     * @return mMeinekeSpringStiffness
+     * @return mCellCellSpringStiffness
      */
-    double GetMeinekeSpringStiffness();
+    double GetCellCellSpringStiffness();
 
     /**
      * @return mMeinekeSpringGrowthDuration
      */
     double GetMeinekeSpringGrowthDuration();
 
-    /*
-     * Set mFibroblastAlignmentStrength
-     * 
-     * @param fibroblastAlignmentStrength
+    /**
+     * @return mCellEcmStiffnessMultiplicationFactor
      */
-    void SetFibroblastAlignmentStrength(double fibroblastAlignmentStrength);
+    double GetCellEcmStiffnessMultiplicationFactor();
 
     /**
-     * Set mMeinekeSpringStiffness.
+     * Set mCellCellSpringStiffness.
      *
-     * @param springStiffness the new value of mMeinekeSpringStiffness
+     * @param springStiffness the new value of mCellCellSpringStiffness
      */
-    void SetMeinekeSpringStiffness(double springStiffness);
+    void SetCellCellSpringStiffness(double springStiffness);
 
     /**
      * Set mMeinekeDivisionRestingSpringLength.
@@ -229,6 +212,13 @@ public:
      * @param springGrowthDuration the new value of mMeinekeSpringGrowthDuration
      */
     void SetMeinekeSpringGrowthDuration(double springGrowthDuration);
+
+    /**
+     * Set mCellEcmStiffnessMultiplicationFactor
+     * 
+     * @param CellEcmStiffnessMultiplicationFactor the new value of mCellEcmStiffnessMultiplicationFactor
+     */
+    void SetCellEcmStiffnessMultiplicationFactor(double CellEcmStiffnessMultiplicationFactor);
 
     /**
      * Overridden OutputForceParameters() method.

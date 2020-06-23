@@ -1,8 +1,8 @@
 Process 0 of 1.
 uname sysname  = Linux
 uname nodename = axel-VirtualBox
-uname release  = 4.15.0-99-generic
-uname version  = #100-Ubuntu SMP Wed Apr 22 20:32:56 UTC 2020
+uname release  = 4.15.0-101-generic
+uname version  = #102-Ubuntu SMP Mon May 11 10:07:26 UTC 2020
 uname machine  = x86_64
 
 Information on number and type of processors:

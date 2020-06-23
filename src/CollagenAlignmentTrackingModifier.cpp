@@ -213,7 +213,8 @@ void CollagenAlignmentTrackingModifier<DIM>::UpdateCellData(AbstractCellPopulati
                                     neighbour_orientation -= 2.0*M_PI;
                                 }
 
-                                current_orientation += reorientation_strength * sin(neighbour_orientation - current_orientation);
+                                double dt = SimulationTime::Instance()->GetTimeStep(); // Get dt
+                                current_orientation += reorientation_strength * dt * sin(neighbour_orientation - current_orientation);
                             }
 
                         }
