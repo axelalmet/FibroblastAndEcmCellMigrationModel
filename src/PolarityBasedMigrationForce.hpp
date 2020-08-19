@@ -33,8 +33,8 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
-#ifndef FIBREALIGNMENTBASEDMIGRATIONFORCE_HPP_
-#define FIBREALIGNMENTBASEDMIGRATIONFORCE_HPP_
+#ifndef PolarityBASEDMIGRATIONFORCE_HPP_
+#define PolarityBASEDMIGRATIONFORCE_HPP_
 
 #include "ChasteSerialization.hpp"
 #include <boost/serialization/base_object.hpp>
@@ -42,10 +42,10 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "AbstractForce.hpp"
 
 /**
- * A FibreAlignmentBasedMigration force class.
+ * A PolarityBasedMigration force class.
  */
 template<unsigned DIM>
-class FibreAlignmentBasedMigrationForce  : public AbstractForce<DIM>
+class PolarityBasedMigrationForce  : public AbstractForce<DIM>
 {
 friend class TestForces;
 
@@ -77,12 +77,12 @@ public:
     /**
      * Constructor.
      */
-    FibreAlignmentBasedMigrationForce();
+    PolarityBasedMigrationForce();
 
     /**
      * Destructor.
      */
-    ~FibreAlignmentBasedMigrationForce();
+    ~PolarityBasedMigrationForce();
 
     /*
      * Get migration force strength
@@ -115,6 +115,6 @@ public:
 };
 
 #include "SerializationExportWrapper.hpp"
-EXPORT_TEMPLATE_CLASS_SAME_DIMS(FibreAlignmentBasedMigrationForce)
+EXPORT_TEMPLATE_CLASS_SAME_DIMS(PolarityBasedMigrationForce)
 
-#endif /*FibreAlignmentBasedMigrationForce_HPP_*/
+#endif /*PolarityBasedMigrationForce_HPP_*/

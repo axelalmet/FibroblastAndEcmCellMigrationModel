@@ -129,7 +129,7 @@ void CollagenFibreTrackingModifier<DIM>::UpdateCellData(AbstractCellPopulation<D
 
                 *mpMarkedSpringsFile << node_index_A << " " << node_index_B << " " 
                                         << cell_location_A[0] << " " << cell_location_A[1] << " "
-                                        << cell_location_B[0] << " " << cell_location_B[1];
+                                        << cell_location_B[0] << " " << cell_location_B[1] << " ";
             }
 
         }

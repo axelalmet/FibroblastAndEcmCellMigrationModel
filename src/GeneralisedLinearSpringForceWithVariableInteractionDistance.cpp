@@ -36,6 +36,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "GeneralisedLinearSpringForceWithVariableInteractionDistance.hpp"
 #include "CollagenCellProliferativeType.hpp"
 #include "FibroblastCellProliferativeType.hpp"
+#include "DifferentiatedCellProliferativeType.hpp"
 #include "Debug.hpp"
 
 template<unsigned ELEMENT_DIM, unsigned SPACE_DIM>
@@ -234,11 +235,14 @@ c_vector<double, SPACE_DIM> GeneralisedLinearSpringForceWithVariableInteractionD
                     }
 
                     // Apply the force to the cell
-                    if (!p_cell_type_A->IsType<CollagenCellProliferativeType>()) // Apply the force to node A only
+                    // Curious to see if not allowing attraction between diff cells and ECM allows for better stratification
+                    if ( (!p_cell_type_A->IsType<CollagenCellProliferativeType>())
+                        &&(!p_cell_type_A->IsType<DifferentiatedCellProliferativeType>()) ) // Apply the force to node A only
                     {
                         p_node_a->AddAppliedForceContribution(force_on_cell);
                     }
-                    else if (!p_cell_type_B->IsType<CollagenCellProliferativeType>()) // Apply the force to node B only.
+                    else if ( (!p_cell_type_B->IsType<CollagenCellProliferativeType>())
+                        &&(!p_cell_type_B->IsType<DifferentiatedCellProliferativeType>()) ) // Apply the force to node B only.
                     {
                         p_node_b->AddAppliedForceContribution(force_on_cell); 
                     }

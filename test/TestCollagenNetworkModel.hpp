@@ -10,7 +10,6 @@
 #include "CheckpointArchiveTypes.hpp" // Needed if we use GetIdentifier() method (which we do)
 #include "HoneycombMeshGenerator.hpp" //Generates mesh
 #include "GeneralisedLinearSpringForceWithVariableInteractionDistance.hpp" // Version of generalised linear spring force where the spring stiffness depends on cell-cell types
-#include "FibreAlignmentBasedMigrationForce.hpp" // Migration force that aligns each fibroblast with surrounding collagen fibres
 #include "NoCellCycleModel.hpp" // No cell cycle model for now.
 #include "NodeBasedCellPopulation.hpp" // Overlapping spheres centre-based population
 #include "NodesOnlyMesh.hpp" // Mesh with periodic vertical boundaries
@@ -19,10 +18,6 @@
 #include "FibroblastCellProliferativeType.hpp" // Dermal cell type
 #include "CollagenCellProliferativeType.hpp" // Collagen fibre cell type
 #include "WildTypeCellMutationState.hpp" // Epidermal mutation state
-#include "CollagenAlignmentTrackingModifier.hpp" // Modifier to align fibroblasts with local collagen fibre orientation
-#include "PolarityTrackingModifier.hpp" // Modifier to align fibroblasts with local collagen fibre orientation
-#include "CellMigrationDirectionWriter.hpp" // Cell writer for migration direction
-// #include "CellCollagenFibreOrientationWriter.hpp" // Cell writer for collagen fibre orientations
 #include "CollagenFibreTrackingModifier.hpp"
 #include "FakePetscSetup.hpp" //Forbids tests running in parallel
 #include "PetscSetupAndFinalize.hpp"

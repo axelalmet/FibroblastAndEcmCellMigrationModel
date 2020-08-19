@@ -33,37 +33,37 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
-#include "FibreAlignmentBasedMigrationForce.hpp"
+#include "PolarityBasedMigrationForce.hpp"
 #include "FibroblastCellProliferativeType.hpp"
 
 template<unsigned DIM>
-FibreAlignmentBasedMigrationForce<DIM>::FibreAlignmentBasedMigrationForce()
+PolarityBasedMigrationForce<DIM>::PolarityBasedMigrationForce()
     : AbstractForce<DIM>(),
     mMigrationForceStrength(DOUBLE_UNSET)
 {
 }
 
 template<unsigned DIM>
-FibreAlignmentBasedMigrationForce<DIM>::~FibreAlignmentBasedMigrationForce()
+PolarityBasedMigrationForce<DIM>::~PolarityBasedMigrationForce()
 {
 }
 
 // Method to get the strength of the migration force
 template<unsigned DIM>
-double FibreAlignmentBasedMigrationForce<DIM>::GetMigrationForceStrength()
+double PolarityBasedMigrationForce<DIM>::GetMigrationForceStrength()
 {
     return mMigrationForceStrength;
 }
 
 // Method to set the strength of migration force
 template<unsigned DIM>
-void FibreAlignmentBasedMigrationForce<DIM>::SetMigrationForceStrength(double migrationForceStrength)
+void PolarityBasedMigrationForce<DIM>::SetMigrationForceStrength(double migrationForceStrength)
 {
     mMigrationForceStrength = migrationForceStrength;
 }
 
 template<unsigned DIM>
-void FibreAlignmentBasedMigrationForce<DIM>::AddForceContribution(AbstractCellPopulation<DIM>& rCellPopulation)
+void PolarityBasedMigrationForce<DIM>::AddForceContribution(AbstractCellPopulation<DIM>& rCellPopulation)
 {
 
     double migration_force_strength = GetMigrationForceStrength(); // Strength of migration force
@@ -96,7 +96,7 @@ void FibreAlignmentBasedMigrationForce<DIM>::AddForceContribution(AbstractCellPo
 }
 
 template<unsigned DIM>
-void FibreAlignmentBasedMigrationForce<DIM>::OutputForceParameters(out_stream& rParamsFile)
+void PolarityBasedMigrationForce<DIM>::OutputForceParameters(out_stream& rParamsFile)
 {
 
 	*rParamsFile <<  "\t\t\t<MigrationForceStrength>"<<  mMigrationForceStrength << "</MigrationForceStrength> \n" ;
@@ -106,10 +106,10 @@ void FibreAlignmentBasedMigrationForce<DIM>::OutputForceParameters(out_stream& r
 }
 
 // Explicit instantiation
-template class FibreAlignmentBasedMigrationForce<1>;
-template class FibreAlignmentBasedMigrationForce<2>;
-template class FibreAlignmentBasedMigrationForce<3>;
+template class PolarityBasedMigrationForce<1>;
+template class PolarityBasedMigrationForce<2>;
+template class PolarityBasedMigrationForce<3>;
 
 // Serialization for Boost >= 1.36
 #include "SerializationExportWrapperForCpp.hpp"
-EXPORT_TEMPLATE_CLASS_SAME_DIMS(FibreAlignmentBasedMigrationForce)
+EXPORT_TEMPLATE_CLASS_SAME_DIMS(PolarityBasedMigrationForce)

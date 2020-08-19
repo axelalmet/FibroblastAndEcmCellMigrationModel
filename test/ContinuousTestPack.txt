@@ -1,3 +1,4 @@
 TestFibroblastInteractionForce.hpp
 TestMigrationOverExtracellularMatrix.hpp
 TestCollagenNetworkModel.hpp
+TestLatticeBasedCollagenNetworkModel.hpp

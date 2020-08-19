@@ -10,7 +10,7 @@
 #include "CheckpointArchiveTypes.hpp" // Needed if we use GetIdentifier() method (which we do)
 #include "HoneycombMeshGenerator.hpp" //Generates mesh
 #include "GeneralisedLinearSpringForceWithVariableInteractionDistance.hpp" // Version of generalised linear spring force where the spring stiffness depends on cell-cell types
-#include "FibreAlignmentBasedMigrationForce.hpp" // Migration force that aligns each fibroblast with surrounding collagen fibres
+#include "PolarityBasedMigrationForce.hpp" // Migration force that aligns each fibroblast with surrounding collagen fibres
 #include "NoCellCycleModel.hpp" // No cell cycle model for now.
 #include "NodeBasedCellPopulation.hpp" // Overlapping spheres centre-based population
 #include "NodesOnlyMesh.hpp" // Mesh with periodic vertical boundaries
@@ -690,7 +690,7 @@ public:
         simulator.AddForce(p_spring_force);
 
         // Add the migration force 
-        MAKE_PTR(FibreAlignmentBasedMigrationForce<2>, p_migration_force);
+        MAKE_PTR(PolarityBasedMigrationForce<2>, p_migration_force);
         p_migration_force->SetMigrationForceStrength(migration_force_strength);
         simulator.AddForce(p_migration_force);
 
